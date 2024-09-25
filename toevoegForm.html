@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toevoegen Agenda-item</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button, .overview-link {
+            display: inline-block;
+            text-decoration: none;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #ffffff;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button {
+            background-color: #3498db;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+        background-color: #333;
+            color: white;
+        }
+
+        td {
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        td:hover {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0066cc; /* Link color */
+        }
+
+        a:hover {
+            color: #004080; /* Hover color */
+        }
+    </style>
+</head>
+<body>
+
+<form name="agendaFormulier" action="toevoeg.php" method="post">
+    <label for="onderwerpVeld">Onderwerp:</label>
+    <input type="text" id="onderwerpVeld" name="onderwerpVeld" required>
+
+    <label for="inhoudVeld">Inhoud:</label>
+    <textarea id="inhoudVeld" name="inhoudVeld" rows="4" required></textarea>
+
+    <label for="begindatumVeld">Begindatum:</label>
+    <input type="date" id="begindatumVeld" name="begindatumVeld" required>
+
+    <label for="einddatumVeld">Einddatum:</label>
+    <input type="date" id="einddatumVeld" name="einddatumVeld" required>
+
+    <label for="prioriteitVeld">Prioriteit:</label>
+    <input type="number" id="prioriteitVeld" name="prioriteitVeld" min="1" max="5" value="3" required>
+
+    <label for="statusVeld">Status:</label>
+    <select id="statusVeld" name="statusVeld" required>
+        <option value="n" selected>Niet begonnen</option>
+        <option value="b">Bezig</option>
+        <option value="a">Afgerond</option>
+    </select>
+
+    <button type="submit" name="verzend">Voeg toe aan agenda</button>
+</form>
+
+</body>
+</html>
